@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './style.css'
 
 function Home() {
@@ -26,27 +27,27 @@ function Home() {
       image: imagePath + '74xTEgt7R36Fpooo50r9T25onhq.jpg'
     },
     {
-      id: 2,
+      id: 5,
       title: 'Encanto',
       image: imagePath + '4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg'
     },
     {
-      id: 3,
+      id: 6,
       title: 'Scream',
       image: imagePath + 'kZNHR1upJKF3eTzdgl5V8s8a4C3.jpg'
     },
     {
-      id: 4,
+      id: 7,
       title: 'The Batman',
       image: imagePath + '74xTEgt7R36Fpooo50r9T25onhq.jpg'
     },
     {
-      id: 2,
+      id: 8,
       title: 'Encanto',
       image: imagePath + '4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg'
     },
     {
-      id: 3,
+      id: 9,
       title: 'Scream',
       image: imagePath + 'kZNHR1upJKF3eTzdgl5V8s8a4C3.jpg'
     },
@@ -59,7 +60,9 @@ function Home() {
       {movies.map(movie => {
         return (
           <li>
-            <img src={movie.image} alt={movie.title}/>
+            <Link to={"/details/" + movie.id}>
+              <img src={movie.image} alt={movie.title}/>
+            </Link>
             <span>{movie.title}</span>
           </li>
         )
