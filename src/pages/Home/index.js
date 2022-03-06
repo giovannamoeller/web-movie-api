@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './style.css'
+import { HomeContainer } from './styles';
 
 function Home() {
 
@@ -54,13 +54,13 @@ function Home() {
   ]
 
   return (
-    <div className="App">
+    <HomeContainer>
       <h1>Movies</h1>
       <ul>
       {movies.map(movie => {
         return (
           <li>
-            <Link to={"/details/" + movie.id}>
+            <Link to={`/details/${movie.id}`}>
               <img src={movie.image} alt={movie.title}/>
             </Link>
             <span>{movie.title}</span>
@@ -68,7 +68,7 @@ function Home() {
         )
       })}
       </ul>
-    </div>
+    </HomeContainer>
   );
 }
 
