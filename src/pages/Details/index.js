@@ -1,23 +1,37 @@
 //import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { APIkey } from '../../config/key';
 import { DetailsContainer } from './styles';
 
 function Details() {
   const { id } = useParams()
   let navigate = useNavigate()
 
+  const [movie, setMovie] = useState([])
+
+  const imagePath = 'https://image.tmdb.org/t/p/w500/'
+
   function handleButtonClick() {
     navigate('/')
   }
 
-  const movie = {
-    id,
-    title: 'Spider Man',
-    image: 'https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg',
-    sinopse: 'filme otimo eu amei',
-    releaseDate: '15/12/2021'
-  }
-  
+  useEffect(() => {
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${APIkey}&language=en-US`)
+    .then(response => response.json())
+    .then(data => {
+      const {title, poster_path, release_date, overview} = data
+      const movie = {
+        id,
+        title,
+        image: `${imagePath}${poster_path}`,
+        sinopse: overview,
+        releaseDate: release_date
+      }
+      setMovie(movie)
+    })
+  }, [id])
+
   return (
     <DetailsContainer>
       <div className="movie">

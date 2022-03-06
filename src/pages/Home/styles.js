@@ -22,7 +22,7 @@ export const HomeContainer = styled.div`
   }
 
   img {
-    width: 150px;
+    width: 180px;
     border-radius: 1rem;
     margin-bottom: 2rem;
   }
@@ -30,6 +30,7 @@ export const HomeContainer = styled.div`
   span {
     font-weight: bold;
     font-size: 120%;
+    text-align: center;
   }
 
   a {

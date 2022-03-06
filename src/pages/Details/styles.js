@@ -23,6 +23,7 @@ export const DetailsContainer = styled.div`
     font-weight: normal;
     font-size: 120%;
     margin-bottom: 1rem;
+    line-height: 130%;
   }
 
   .release-date {
@@ -35,6 +36,7 @@ export const DetailsContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin-left: 6rem;
+    max-width: 50%;
   }
 
   button {
