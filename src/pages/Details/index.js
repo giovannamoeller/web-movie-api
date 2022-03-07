@@ -7,9 +7,7 @@ import { DetailsContainer } from './styles';
 function Details() {
   const { id } = useParams()
   let navigate = useNavigate()
-
   const [movie, setMovie] = useState([])
-
   const imagePath = 'https://image.tmdb.org/t/p/w500/'
 
   function handleButtonClick() {
@@ -40,7 +38,7 @@ function Details() {
         <h1>{movie.title}</h1>
         <span>Sinopse: {movie.sinopse}</span>
         <span className='release-date'>Release date: {movie.releaseDate}</span>
-        <button onClick={handleButtonClick}>Voltar</button>
+        <button onClick={handleButtonClick}>Go Back</button>
       </div>
     </div>
     </DetailsContainer>

@@ -13,6 +13,7 @@ export const HomeContainer = styled.div`
     grid-template-columns: repeat(6, 1fr);
     column-gap: 1rem;
     row-gap: 4rem;
+    padding: 2rem;
   }
 
   li {
