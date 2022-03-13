@@ -1,18 +1,14 @@
 //import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { APIkey } from '../../config/key';
-import { DetailsContainer } from './styles';
+import { Container } from './styles';
 
 function Details() {
   const { id } = useParams()
-  let navigate = useNavigate()
   const [movie, setMovie] = useState([])
-  const imagePath = 'https://image.tmdb.org/t/p/w500/'
 
-  function handleButtonClick() {
-    navigate('/')
-  }
+  const imagePath = 'https://image.tmdb.org/t/p/w500/'
 
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${APIkey}&language=en-US`)
@@ -31,17 +27,17 @@ function Details() {
   }, [id])
 
   return (
-    <DetailsContainer>
+    <Container>
       <div className="movie">
       <img src={movie.image} alt={movie.sinopse}/>
       <div className="details">
         <h1>{movie.title}</h1>
         <span>Sinopse: {movie.sinopse}</span>
         <span className='release-date'>Release date: {movie.releaseDate}</span>
-        <button onClick={handleButtonClick}>Go Back</button>
+        <Link to="/"><button>Go Back</button></Link>
       </div>
     </div>
-    </DetailsContainer>
+    </Container>
   );
 }
 

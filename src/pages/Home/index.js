@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { APIkey } from '../../config/key';
-import { HomeContainer } from './styles';
+import { Container, Movie, MovieList } from './styles';
 
 
 function Home() {
@@ -19,21 +19,21 @@ function Home() {
   }, [])
 
   return (
-    <HomeContainer>
+    <Container>
       <h1>Movies</h1>
-      <ul>
+      <MovieList>
       {movies.map(movie => {
         return (
-          <li key={movie.id}>
+          <Movie key={movie.id}>
             <Link to={`/details/${movie.id}`}>
               <img src={`${imagePath}${movie.poster_path}`} alt={movie.title}/>
             </Link>
             <span>{movie.title}</span>
-          </li>
+          </Movie>
         )
       })}
-      </ul>
-    </HomeContainer>
+      </MovieList>
+    </Container>
   );
 }
 
