@@ -7,9 +7,10 @@ export const Container = styled.div`
   h1 {
     margin: 3rem 0;
   }
-
-  .movie {
+  .movie, .details{
     display: flex;
+  }
+  .movie {
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -34,7 +35,6 @@ export const Container = styled.div`
   }
 
   .details {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-left: 6rem;
@@ -51,10 +51,9 @@ export const Container = styled.div`
     margin-top: 1rem;
     font-size: 100%;
     transition: all .3s;
-  }
-
-  button:hover {
-    background-color: #5848c2;
+    &:hover {
+      background-color: #5848c2;
+    }
   }
 
 `;
