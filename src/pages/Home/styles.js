@@ -36,9 +36,9 @@ export const Movie = styled.li`
 
   a {
     transition: all 0.3s;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
-  a:hover {
-    transform: scale(1.1);
-  }
 `
